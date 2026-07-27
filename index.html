@@ -4,10 +4,49 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>age-calculator</title>
+    <title>Age Calculator</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <main class="card">
+        <h1>Age Calculator</h1>
+        <p class="subtitle">Pick your birthdate to see your exact age.</p>
+
+        <form id="age-form" novalidate>
+          <label for="birthdate">Birthdate</label>
+          <input
+            type="text"
+            id="birthdate"
+            name="birthdate"
+            placeholder="Select your date of birth"
+            autocomplete="off"
+            required
+          />
+
+          <p id="error-message" class="error-message" role="alert" aria-live="polite"></p>
+
+          <button type="submit" id="submit-btn">Calculate Age</button>
+        </form>
+
+        <section id="result" class="result" aria-live="polite" hidden>
+          <h2>Your Age Is</h2>
+          <div class="age-grid">
+            <div class="age-unit">
+              <span id="years" class="age-value">0</span>
+              <span class="age-label">Years</span>
+            </div>
+            <div class="age-unit">
+              <span id="months" class="age-value">0</span>
+              <span class="age-label">Months</span>
+            </div>
+            <div class="age-unit">
+              <span id="days" class="age-value">0</span>
+              <span class="age-label">Days</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
